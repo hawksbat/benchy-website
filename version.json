@@ -1,0 +1,6 @@
+{
+  "version": "9.6.0",
+  "downloadUrl": "https://github.com/YOUR_GITHUB_USERNAME/Benchy/releases/latest",
+  "releaseNotes": "Langues FR/EN/ES, catalogue jeux amélioré, tutoriel enrichi et système de mises à jour.",
+  "mandatory": false
+}
