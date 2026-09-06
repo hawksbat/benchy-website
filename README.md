@@ -10,7 +10,7 @@ Site statique prêt pour GitHub Pages + petit Worker Cloudflare optionnel pour P
 5. Chez Amen, configure les DNS demandés par GitHub Pages pour le domaine personnalisé.
 
 ## 2. Téléchargement / releases
-Dans `config.js` et `version.json`, remplace `YOUR_GITHUB_USERNAME/Benchy` par le vrai dépôt qui contient tes GitHub Releases.
+Renseigne l'URL de la release officielle dans `version.json` lorsque l'installateur est publié.
 À chaque nouvelle version, mets à jour `version.json`. Benchy lit ce fichier pour détecter une MAJ sans serveur dédié.
 
 ## 3. PayPal
