@@ -1,6 +1,6 @@
 
-const fallbackVersion="9.6.0";
-const fallbackDownload="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe";
+const fallbackVersion="9.6.1";
+const fallbackDownload="https://github.com/hawksbat/Benchy/releases/download/v9.6.1/Benchy_9.6.0.exe";
 
 const root=document.documentElement;
 const savedTheme=localStorage.getItem("benchy-theme")||"dark";

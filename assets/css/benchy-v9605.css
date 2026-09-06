@@ -248,3 +248,184 @@ input[type=range]::-webkit-slider-thumb{appearance:none;width:15px;height:15px;b
   .footer-row{display:grid}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+
+
+/* ===== v9606 — quieter, finer, less template-like ===== */
+:root{
+  --max:1120px;
+  --radius:10px;
+}
+
+/* typography: smaller, tighter, less exaggerated */
+body{font-size:14px}
+.hero{padding:78px 0 48px}
+.hero h1{
+  max-width:780px;
+  margin:14px auto 16px;
+  font-size:clamp(42px,5.5vw,64px);
+  line-height:1.01;
+  letter-spacing:-.048em;
+  font-weight:620
+}
+.hero h1 span{font-weight:520}
+.hero-copy{
+  max-width:590px;
+  font-size:15px;
+  line-height:1.55;
+}
+.hero-kicker{font-size:10px;letter-spacing:.15em}
+.hero-actions{margin-top:23px;gap:8px}
+.btn{
+  height:41px;
+  padding:0 14px;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:650
+}
+.header-cta{
+  height:34px;
+  padding:0 12px;
+  font-size:11px;
+  border-radius:8px
+}
+
+/* cleaner header controls */
+.theme-switch{height:26px;width:50px}
+.theme-switch .knob{width:18px;height:18px}
+html[data-theme="light"] .theme-switch .knob{transform:translateX(24px)}
+.lang-switch button{height:20px;min-width:27px;font-size:9px}
+
+/* less dead vertical space */
+.section{padding:50px 0}
+.hero-product{padding:0 0 42px}
+.screens{padding:44px 0 48px}
+.plan{padding:50px 0}
+.download{padding:42px 0 52px}
+
+.section-head{margin-bottom:21px;max-width:620px}
+.section-head h2{
+  font-size:clamp(29px,3.7vw,40px);
+  letter-spacing:-.037em;
+  margin:8px 0
+}
+.section-head p{font-size:13px}
+.label{font-size:10px}
+
+/* screenshots: flatter, thinner edges */
+.product-stage,
+.carousel-window{
+  border-radius:10px;
+  border-color:rgba(255,255,255,.08);
+  box-shadow:0 16px 40px rgba(0,0,0,.18)
+}
+html[data-theme="light"] .product-stage,
+html[data-theme="light"] .carousel-window{box-shadow:0 14px 34px rgba(0,0,0,.07)}
+.slide{padding:2px}
+.slide img{border-radius:7px}
+.carousel-foot{padding:9px 11px 10px}
+.carousel-foot h3{font-size:13px}
+.carousel-foot p{font-size:10.5px}
+.arrow-btn{width:29px;height:29px;border-radius:7px}
+.tab{height:29px;border-radius:7px;font-size:10px}
+
+/* widgets: less card-like and more app-like */
+.feature-showcase{gap:10px}
+.feature-panel{
+  border-radius:10px;
+  min-height:270px;
+  background:transparent
+}
+.feature-copy{padding:20px}
+.feature-copy h3{font-size:22px}
+.feature-copy p{font-size:12.5px}
+.widget{padding:18px}
+.widget-title{font-size:14px}
+.widget-sub{font-size:10px}
+.widget-tag{font-size:9px}
+.control{margin-top:14px}
+.mini-btn{
+  height:29px;
+  border-radius:6px;
+  padding:0 10px;
+  font-size:10px
+}
+.fake-select{padding:8px 9px;border-radius:6px;font-size:10px}
+.vs{width:30px;height:30px;font-size:9px}
+.gpu{border-radius:7px;padding:9px}
+.meters{gap:7px}
+.meter{padding:10px;border-radius:7px}
+.meter strong{font-size:17px}
+
+/* pricing: no giant SaaS card, just a compact editorial band */
+.plan-intro{
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:28px;
+  margin-bottom:15px
+}
+.plan-intro h2{
+  font-size:clamp(28px,3.8vw,38px);
+  margin:7px 0 6px;
+  font-weight:610
+}
+.plan-intro p{font-size:12.5px}
+.plan-price strong{font-size:29px;font-weight:650}
+.plan-price span{font-size:10px}
+.plan-summary{
+  padding:14px 0;
+  gap:20px
+}
+.plan-summary h3{font-size:15px;margin-bottom:3px}
+.plan-summary p{font-size:11.5px}
+.buy-btn{
+  height:38px;
+  padding:0 14px;
+  border-radius:7px;
+  font-size:11px;
+  font-weight:700
+}
+.comparison{margin-top:10px}
+.comp-row{
+  grid-template-columns:1fr 100px 100px;
+  padding:9px 0;
+  font-size:11px
+}
+.comp-row.header{font-size:9px}
+
+/* download strip: visually quiet */
+.download-strip{
+  max-width:900px;
+  padding:14px 0;
+  gap:18px
+}
+.download-info img{width:34px;height:34px}
+.download-info h2{font-size:15px}
+.download-info p{font-size:10px}
+
+/* payment modal follows DA */
+.pay-dialog{
+  width:min(calc(100% - 24px),410px);
+  border-radius:11px
+}
+.pay-head{padding:16px 16px 12px}
+.pay-head h3{font-size:17px}
+.pay-body{padding:14px 16px 16px}
+.pay-note{font-size:9px}
+
+/* footer */
+.footer{padding:19px 0 24px}
+.footer-copy,.footer-links a{font-size:10px}
+
+@media(max-width:640px){
+  .hero{padding:58px 0 40px}
+  .hero h1{font-size:clamp(38px,12vw,50px)}
+  .hero-copy{font-size:14px}
+  .section{padding:42px 0}
+  .section-head h2{font-size:28px}
+  .feature-panel{min-height:auto}
+  .plan{padding:44px 0}
+  .plan-intro{gap:12px}
+  .plan-intro h2{font-size:28px}
+  .comp-row{grid-template-columns:1fr 58px 58px;font-size:10px}
+  .download{padding:38px 0 46px}
+}
