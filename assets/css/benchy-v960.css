@@ -351,3 +351,30 @@ button{font:inherit}
   *,*::before,*::after{transition:none!important;animation:none!important}
   .reveal{opacity:1;transform:none}
 }
+
+
+/* Strong cache-safe desktop defaults */
+.mobile-menu{display:none!important}
+.menu-btn{display:none!important}
+@media(min-width:901px){
+  .nav{display:flex!important}
+  .header-cta{display:inline-flex!important}
+  .mobile-menu{display:none!important}
+  .menu-btn{display:none!important}
+}
+@media(max-width:900px){
+  .nav{display:none!important}
+  .header-cta{display:none!important}
+  .menu-btn{display:grid!important;place-items:center}
+  .mobile-menu{display:none!important}
+  .mobile-menu.open{display:block!important}
+}
+
+/* Slightly cleaner spacing */
+.section-head{max-width:700px}
+.carousel-viewport{background:#0f0f10}
+.carousel-slide{padding:10px}
+.screen-shell{border-color:rgba(255,255,255,.065)}
+@media(min-width:901px){
+  .section-head{text-align:center!important}
+}
