@@ -16,7 +16,7 @@ Renseigne l'URL de la release officielle dans `version.json` lorsque l'installat
 ## 3. PayPal
 Le Client ID PayPal est public et va dans `config.js`. Le secret PayPal serveur ne doit JAMAIS être mis dans GitHub Pages.
 Le dossier `worker/` contient un backend Cloudflare Worker minimal pour créer et capturer une commande PayPal.
-Dans Cloudflare Worker, ajoute les secrets `PAYPAL_CLIENT_ID` et `PAYPAL_CLIENT_SECRET`, déploie le Worker, puis mets son URL dans `paymentApiBase` de `config.js`.
+Dans Cloudflare Worker, ajoute le Client ID et le secret PayPal comme variables secrètes, déploie le Worker, puis mets son URL dans `paymentApiBase` de `config.js`.
 
 ## 4. Avant mise en production
 - complète `/legal/` avec tes vraies mentions légales, CGV et politique de confidentialité ;
