@@ -1,252 +1,141 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Benchy — Benchmark et analyse PC</title>
-  <meta name="description" content="Benchy analyse ton matériel, mesure ses performances et t'aide à comprendre ta configuration.">
-  <meta name="theme-color" content="#0b0b0c">
-  <link rel="canonical" href="https://benchy-app.com/">
-  <link rel="icon" type="image/x-icon" href="./favicon.ico?v=9604">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png?v=9604">
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png?v=9604">
-  <link rel="apple-touch-icon" href="./apple-touch-icon.png?v=9604">
-  <link rel="stylesheet" href="./assets/css/benchy-v9604.css?v=9604">
-  <script 
-  src="https://www.paypal.com/sdk/js?client-id=BAAspb7sEUs6UwzwmF7WPGrCjyskTWoa6N1C_EoVcwQVjpy9g0V3kfaO4oLPPH7_4M1nyrOI62aEx2w9Ug&components=hosted-buttons&disable-funding=venmo&currency=EUR">
-</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Benchy — Benchmark et analyse PC</title>
+<meta name="description" content="Benchy analyse ton matériel, mesure ses performances et t'aide à comprendre ta configuration.">
+<meta name="theme-color" content="#0b0b0c">
+<link rel="canonical" href="https://benchy-app.com/">
+<link rel="icon" type="image/png" href="/benchy-favicon-v9605.png?v=9605">
+<link rel="shortcut icon" type="image/png" href="/benchy-favicon-v9605.png?v=9605">
+<link rel="apple-touch-icon" href="/apple-touch-icon-v9605.png?v=9605">
+<link rel="stylesheet" href="/assets/css/benchy-v9605.css?v=9605">
+<script src="https://www.paypal.com/sdk/js?client-id=BAAspb7sEUs6UwzwmF7WPGrCjyskTWoa6N1C_EoVcwQVjpy9g0V3kfaO4oLPPH7_4M1nyrOI62aEx2w9Ug&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
 </head>
 <body>
 <header class="header">
-  <div class="container header-row">
-    <a class="brand" href="./">
-      <img src="./assets/images/benchy-logo.png" alt="">
-      <span><span class="brand-name">BENCHY</span><span class="brand-sub">by Hawks Inc</span></span>
-    </a>
-    <nav class="nav">
-      <a href="#fonctionnalites">Fonctionnalités</a>
-      <a href="#screens">Screens</a>
-      <a href="#plan">Plan</a>
-      <a href="#telecharger">Télécharger</a>
-    </nav>
-    <a class="header-cta" data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.2 10.7 4v7.1H3V5.2Zm8.8-1.4L21 2.5v8.6h-9.2V3.8ZM3 12.3h7.7V19L3 17.8v-5.5Zm8.8 0H21v8.6l-9.2-1.3v-7.3Z" fill="currentColor" stroke="none"/></svg> Télécharger</a>
-    <button class="menu-btn" data-menu aria-label="Menu" aria-expanded="false"><svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+ <div class="container header-row">
+  <a class="brand" href="/"><img src="/assets/images/benchy-logo.png" alt=""><span><strong>BENCHY</strong><small>by Hawks Inc</small></span></a>
+  <nav class="nav">
+   <a href="#features" data-i18n="navFeatures">Fonctionnalités</a>
+   <a href="#screens" data-i18n="navScreens">Screens</a>
+   <a href="#plan" data-i18n="navPlan">Plan</a>
+   <a href="#download" data-i18n="navDownload">Télécharger</a>
+  </nav>
+  <div class="header-tools">
+   <button class="theme-switch" data-theme-toggle aria-label="Activer le mode clair"><svg class="sun icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="moon icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg><span class="knob"></span></button>
+   <div class="lang-switch" aria-label="Langue"><button data-lang="fr">FR</button><button data-lang="en">EN</button><button data-lang="es">ES</button></div>
+   <a class="header-cta" data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.2 10.7 4v7.1H3V5.2Zm8.8-1.4L21 2.5v8.6h-9.2V3.8ZM3 12.3h7.7V19L3 17.8v-5.5Zm8.8 0H21v8.6l-9.2-1.3v-7.3Z" fill="currentColor" stroke="none"/></svg><span data-i18n="navDownload">Télécharger</span></a>
   </div>
-  <div class="mobile-menu" data-mobile-menu>
-    <a href="#fonctionnalites">Fonctionnalités</a>
-    <a href="#screens">Screens</a>
-    <a href="#plan">Plan</a>
-    <a href="#telecharger">Télécharger</a>
-  </div>
+  <button class="menu-btn" data-menu aria-label="Menu"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+ </div>
+ <div class="mobile-menu" data-mobile-menu>
+  <a href="#features" data-i18n="navFeatures">Fonctionnalités</a><a href="#screens" data-i18n="navScreens">Screens</a><a href="#plan" data-i18n="navPlan">Plan</a><a href="#download" data-i18n="navDownload">Télécharger</a>
+ </div>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-kicker">Benchy · Windows</div>
-      <h1>Ton PC.<br><span>Des réponses claires.</span></h1>
-      <p>Benchy regroupe benchmark, matériel, jeux, monitoring et comparaison dans une interface lisible.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.2 10.7 4v7.1H3V5.2Zm8.8-1.4L21 2.5v8.6h-9.2V3.8ZM3 12.3h7.7V19L3 17.8v-5.5Zm8.8 0H21v8.6l-9.2-1.3v-7.3Z" fill="currentColor" stroke="none"/></svg> Télécharger Benchy</a>
-        <a class="btn btn-secondary" href="#fonctionnalites">Voir les fonctionnalités <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
-      </div>
-      <div class="hero-meta">Windows 10/11 · 64 bits · Version <span data-version>9.6.0</span></div>
+<section class="hero">
+ <div class="container hero-inner">
+  <div class="hero-kicker" data-i18n="heroKicker">BENCHY · WINDOWS</div>
+  <h1><span data-i18n="hero1">Ton PC.</span><br><span data-i18n="hero2">Des réponses claires.</span></h1>
+  <p class="hero-copy" data-i18n="heroCopy">Benchy regroupe benchmark, matériel, jeux, monitoring et comparaison dans une interface lisible.</p>
+  <div class="hero-actions">
+   <a class="btn btn-main" data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.2 10.7 4v7.1H3V5.2Zm8.8-1.4L21 2.5v8.6h-9.2V3.8ZM3 12.3h7.7V19L3 17.8v-5.5Zm8.8 0H21v8.6l-9.2-1.3v-7.3Z" fill="currentColor" stroke="none"/></svg><span data-i18n="downloadBenchy">Télécharger Benchy</span></a>
+   <a class="btn btn-secondary" href="#features"><span data-i18n="seeFeatures">Voir les fonctionnalités</span></a>
+  </div>
+  <div class="meta">Windows 10/11 · 64 bits · Version <span data-version>9.6.0</span></div>
+ </div>
+</section>
+
+<section class="hero-product reveal">
+ <div class="container"><div class="product-stage"><img src="/assets/images/benchy-pc.png" alt="Benchy — Mon PC"></div></div>
+</section>
+
+<section class="section" id="features">
+ <div class="container">
+  <div class="section-head reveal"><div class="label" data-i18n="featureLabel">Fonctionnalités</div><h2 data-i18n="featureTitle">Des outils pensés comme l'app.</h2><p data-i18n="featureCopy">Des contrôles interactifs reprennent les usages principaux de Benchy.</p></div>
+
+  <div class="feature-showcase reveal">
+   <article class="feature-panel">
+    <div class="widget">
+     <div class="widget-head"><div><div class="widget-title">Écran</div><div class="widget-sub">DDC/CI · si disponible</div></div><span class="widget-tag">Mon PC</span></div>
+     <div class="control"><div class="control-top"><span>Luminosité</span><strong data-range-value="brightness">85%</strong></div><input type="range" min="0" max="100" value="85" data-range="brightness"></div>
+     <div class="control"><div class="control-top"><span>Contraste</span><strong data-range-value="contrast">50%</strong></div><input type="range" min="0" max="100" value="50" data-range="contrast"></div>
+     <div class="widget-actions"><button class="mini-btn accent">Appliquer</button><button class="mini-btn" data-reset>Réinitialiser 50/50</button><button class="mini-btn">Relire</button></div>
     </div>
-  </section>
+   </article>
 
-  <section class="section" id="fonctionnalites">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="section-label">Fonctionnalités</div>
-        <h2>Des outils qui ressemblent à l'app.</h2>
-        <p>Les démos ci-dessous reprennent les contrôles et la logique visuelle de Benchy.</p>
-      </div>
-
-      <div class="demo-grid reveal">
-        <article class="demo">
-          <div class="demo-head">
-            <div>
-              <div class="demo-title">Écran</div>
-              <div class="demo-sub">Luminosité et contraste matériel · DDC/CI si disponible.</div>
-            </div>
-            <div class="demo-badge">Mon PC</div>
-          </div>
-          <div class="demo-body">
-            <div class="control">
-              <div class="control-row"><span>Luminosité</span><span class="control-value" data-value="brightness">85%</span></div>
-              <input data-range="brightness" type="range" min="0" max="100" value="85">
-            </div>
-            <div class="control">
-              <div class="control-row"><span>Contraste</span><span class="control-value" data-value="contrast">50%</span></div>
-              <input data-range="contrast" type="range" min="0" max="100" value="50">
-            </div>
-            <div class="control-actions">
-              <button class="small-btn accent" type="button">Appliquer</button>
-              <button class="small-btn" data-reset-screen type="button">Réinitialiser 50/50</button>
-              <button class="small-btn" type="button">Relire</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="demo">
-          <div class="demo-head">
-            <div>
-              <div class="demo-title">Comparateur GPU</div>
-              <div class="demo-sub">Performance, prix et rapport perf/€.</div>
-            </div>
-            <div class="demo-badge">Comparer</div>
-          </div>
-          <div class="demo-body">
-            <div class="compare-selects">
-              <div class="fake-select">Radeon RX 6800 XT</div>
-              <div class="vs">VS</div>
-              <div class="fake-select">GeForce RTX 3060 Ti</div>
-            </div>
-            <div class="compare-result">
-              <div class="gpu-row">
-                <div class="gpu-top"><span class="gpu-name">Radeon RX 6800 XT</span><span class="gpu-score">25 079</span></div>
-                <div class="bar"><span style="width:100%"></span></div>
-                <div class="gpu-meta">Occasion 407 € · 61,6 pts/€</div>
-              </div>
-              <div class="gpu-row">
-                <div class="gpu-top"><span class="gpu-name">GeForce RTX 3060 Ti</span><span class="gpu-score">20 227</span></div>
-                <div class="bar"><span style="width:80.6%"></span></div>
-                <div class="gpu-meta">Occasion 315 € · 64,2 pts/€</div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="demo">
-          <div class="demo-head">
-            <div>
-              <div class="demo-title">Monitoring</div>
-              <div class="demo-sub">Les ressources principales dans la même vue.</div>
-            </div>
-            <div class="demo-badge">Utilisation</div>
-          </div>
-          <div class="demo-body">
-            <div class="meter-grid">
-              <div class="meter"><div class="meter-label">CPU</div><div class="meter-value">31%</div><div class="mini-bar"><span style="width:31%"></span></div></div>
-              <div class="meter"><div class="meter-label">GPU</div><div class="meter-value">48%</div><div class="mini-bar"><span style="width:48%"></span></div></div>
-              <div class="meter"><div class="meter-label">RAM</div><div class="meter-value">44%</div><div class="mini-bar"><span style="width:44%"></span></div></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="demo">
-          <div class="demo-head">
-            <div>
-              <div class="demo-title">Jeux</div>
-              <div class="demo-sub">Recherche et recommandations liées au PC détecté.</div>
-            </div>
-            <div class="demo-badge">Catalogue</div>
-          </div>
-          <div class="demo-body">
-            <div class="fake-select">Rechercher un jeu...</div>
-            <div class="feature-lines">
-              <div class="feature-line"><h3>Compatibilité</h3><p>Lecture basée sur CPU, GPU, RAM et résolution visée.</p></div>
-              <div class="feature-line"><h3>Qualité conseillée</h3><p>Une recommandation lisible plutôt qu'une liste de valeurs brutes.</p></div>
-            </div>
-          </div>
-        </article>
-      </div>
+   <article class="feature-panel">
+    <div class="widget">
+     <div class="widget-head"><div><div class="widget-title">Comparateur GPU</div><div class="widget-sub">Performance, prix et perf/€</div></div><span class="widget-tag">Comparer</span></div>
+     <div class="compare-widget">
+      <div class="compare-selects"><div class="fake-select">Radeon RX 6800 XT</div><div class="vs">VS</div><div class="fake-select">GeForce RTX 3060 Ti</div></div>
+      <div class="gpu"><div class="gpu-top"><span>Radeon RX 6800 XT</span><span>25 079</span></div><div class="gpu-bar"><span style="width:100%"></span></div><div class="gpu-meta">Occasion 407 € · 61,6 pts/€</div></div>
+      <div class="gpu"><div class="gpu-top"><span>GeForce RTX 3060 Ti</span><span>20 227</span></div><div class="gpu-bar"><span style="width:80.6%"></span></div><div class="gpu-meta">Occasion 315 € · 64,2 pts/€</div></div>
+     </div>
     </div>
-  </section>
+   </article>
 
-  <section class="screens" id="screens">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="section-label">Screens</div>
-        <h2>L'interface réelle.</h2>
-      </div>
-
-      <div class="screen-tabs reveal">
-        <button class="screen-tab active" data-screen-tab>Mon PC</button>
-        <button class="screen-tab" data-screen-tab>Jeux</button>
-        <button class="screen-tab" data-screen-tab>Comparer</button>
-      </div>
-
-      <div class="carousel reveal" data-carousel>
-        <div class="carousel-window">
-          <div class="carousel-track" data-track>
-            <div class="carousel-slide" data-slide><img src="./assets/images/benchy-pc.png" alt="Mon PC"></div>
-            <div class="carousel-slide" data-slide><img src="./assets/images/benchy-games.png" alt="Jeux"></div>
-            <div class="carousel-slide" data-slide><img src="./assets/images/benchy-compare.png" alt="Comparer"></div>
-          </div>
-          <div class="carousel-footer">
-            <div><h3 data-carousel-title>Mon PC</h3><p data-carousel-desc>Configuration détectée et informations matérielles utiles.</p></div>
-            <div class="carousel-controls">
-              <span class="counter" data-carousel-counter>01 / 03</span>
-              <button class="nav-btn" data-prev><svg class="icon" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
-              <button class="nav-btn" data-next><svg class="icon" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
-            </div>
-          </div>
-        </div>
-      </div>
+   <article class="feature-panel large">
+    <div class="feature-copy"><small>UTILISATION</small><h3>Monitoring</h3><p>CPU, GPU et RAM sont lisibles au même endroit pendant l'utilisation du PC.</p>
+      <div class="meters"><div class="meter"><small>CPU</small><strong>31%</strong><div class="meter-bar"><span style="width:31%"></span></div></div><div class="meter"><small>GPU</small><strong>48%</strong><div class="meter-bar"><span style="width:48%"></span></div></div><div class="meter"><small>RAM</small><strong>44%</strong><div class="meter-bar"><span style="width:44%"></span></div></div></div>
     </div>
-  </section>
+    <div class="feature-media"><img src="/assets/images/benchy-games.png" alt="Benchy — interface"></div>
+   </article>
+  </div>
+ </div>
+</section>
 
-  <section class="plan" id="plan">
-    <div class="container pricing-wrap">
-      <div class="pricing-head reveal">
-        <div>
-          <div class="section-label">Plan</div>
-          <h2>Benchy ou Benchy+.</h2>
-          <p>Benchy reste gratuit. Benchy+ s'achète une seule fois.</p>
-        </div>
-        <div class="price-tag"><strong>19,99 €</strong><small>paiement unique · lifetime</small></div>
-      </div>
-
-      <div class="compare-table reveal">
-        <div class="compare-row header"><div>Fonction</div><div>Benchy</div><div>Benchy+</div></div>
-        <div class="compare-row"><div class="feature">Benchmark CPU / GPU / RAM / stockage</div><div class="cell yes">Inclus</div><div class="cell yes">Inclus</div></div>
-        <div class="compare-row"><div class="feature">Mon PC et informations matériel</div><div class="cell yes">Inclus</div><div class="cell yes">Inclus</div></div>
-        <div class="compare-row"><div class="feature">Catalogue jeux et recommandations</div><div class="cell yes">Inclus</div><div class="cell yes">Inclus</div></div>
-        <div class="compare-row"><div class="feature">Monitoring, stockage, processus, diagnostic</div><div class="cell yes">Inclus</div><div class="cell yes">Inclus</div></div>
-        <div class="compare-row"><div class="feature">Fonctions premium Benchy+</div><div class="cell">—</div><div class="cell plus">Inclus</div></div>
-        <div class="compare-row"><div class="feature">Licence Benchy+</div><div class="cell">—</div><div class="cell plus">À vie</div></div>
-      </div>
-
-      <div class="purchase reveal">
-        <div>
-          <h3>Benchy+</h3>
-          <p>Débloque les fonctions premium Benchy+ pour 19,99 €, sans abonnement.</p>
-        </div>
-        <div class="paypal-shell">
-  <div class="paypal-label">Paiement sécurisé · achat unique</div>
-  <div id="paypal-container-WYR5KHABYAUXQ"></div>
-</div>
-<script>
-  if (window.paypal && paypal.HostedButtons) {
-    paypal.HostedButtons({
-      hostedButtonId: "WYR5KHABYAUXQ",
-    }).render("#paypal-container-WYR5KHABYAUXQ");
-  }
-</script>
-      </div>
+<section class="screens" id="screens">
+ <div class="container">
+  <div class="section-head reveal"><div class="label" data-i18n="screenLabel">Screens</div><h2 data-i18n="screenTitle">L'interface réelle.</h2><p data-i18n="screenCopy">Parcours les pages principales de Benchy.</p></div>
+  <div class="tabs reveal"><button class="tab active" data-tab>Mon PC</button><button class="tab" data-tab>Jeux</button><button class="tab" data-tab>Comparer</button></div>
+  <div class="carousel reveal">
+   <div class="carousel-window">
+    <div class="track" data-track>
+     <div class="slide" data-slide><img src="/assets/images/benchy-pc.png" alt="Mon PC"></div>
+     <div class="slide" data-slide><img src="/assets/images/benchy-games.png" alt="Jeux"></div>
+     <div class="slide" data-slide><img src="/assets/images/benchy-compare.png" alt="Comparer"></div>
     </div>
-  </section>
+    <div class="carousel-foot"><div><h3 data-carousel-title>Mon PC</h3><p data-carousel-desc>Configuration détectée et informations matérielles utiles.</p></div><div class="carousel-controls"><span class="counter" data-counter>01 / 03</span><button class="arrow-btn" data-prev><svg class="icon" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button><button class="arrow-btn" data-next><svg class="icon" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button></div></div>
+   </div>
+  </div>
+ </div>
+</section>
 
-  <section class="download-section" id="telecharger">
-    <div class="container">
-      <div class="download-strip reveal">
-        <div class="download-left">
-          <img src="./assets/images/benchy-logo.png" alt="Logo Benchy">
-          <div><h2>Télécharger Benchy</h2><p>Windows 10/11 · 64 bits · Version <span data-version>9.6.0</span></p></div>
-        </div>
-        <a class="btn btn-primary" data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.2 10.7 4v7.1H3V5.2Zm8.8-1.4L21 2.5v8.6h-9.2V3.8ZM3 12.3h7.7V19L3 17.8v-5.5Zm8.8 0H21v8.6l-9.2-1.3v-7.3Z" fill="currentColor" stroke="none"/></svg> Télécharger</a>
-      </div>
-    </div>
-  </section>
+<section class="plan" id="plan">
+ <div class="container">
+  <div class="plan-intro reveal">
+   <div><div class="label" data-i18n="planLabel">Plan</div><h2 data-i18n="planTitle">Benchy+ en achat unique.</h2><p data-i18n="planCopy">Benchy reste gratuit. Benchy+ ajoute les fonctions premium sans abonnement.</p></div>
+   <div class="plan-price"><strong>19,99 €</strong><span data-i18n="lifetime">paiement unique · lifetime</span></div>
+  </div>
+  <div class="plan-summary reveal"><div><h3>Benchy+</h3><p>Benchmark complet, détails avancés, comparaisons et fonctions premium.</p></div><button class="buy-btn" data-buy data-i18n="buy">Acheter Benchy+</button></div>
+  <div class="comparison reveal">
+   <div class="comp-row header"><div>Fonction</div><div class="comp-cell">Benchy</div><div class="comp-cell">Benchy+</div></div>
+   <div class="comp-row"><div>Benchmark CPU / GPU / RAM / stockage</div><div class="comp-cell yes" data-i18n="included">Inclus</div><div class="comp-cell yes" data-i18n="included">Inclus</div></div>
+   <div class="comp-row"><div>Mon PC, jeux, monitoring et diagnostic</div><div class="comp-cell yes" data-i18n="included">Inclus</div><div class="comp-cell yes" data-i18n="included">Inclus</div></div>
+   <div class="comp-row"><div>Benchmark complet et détails avancés</div><div class="comp-cell">—</div><div class="comp-cell plus" data-i18n="included">Inclus</div></div>
+   <div class="comp-row"><div>Licence Benchy+</div><div class="comp-cell">—</div><div class="comp-cell plus" data-i18n="forever">À vie</div></div>
+  </div>
+ </div>
+</section>
+
+<dialog class="pay-dialog" id="paypalDialog">
+ <div class="pay-head"><div><h3 data-i18n="paymentTitle">Benchy+</h3><p data-i18n="paymentSub">19,99 € · paiement unique</p></div><button class="close-btn" data-close-pay aria-label="Fermer">×</button></div>
+ <div class="pay-body"><div class="paypal-host"><div id="paypal-container-WYR5KHABYAUXQ"></div></div><div class="pay-note" data-i18n="paymentNote">Paiement sécurisé via PayPal</div></div>
+</dialog>
+
+<section class="download" id="download">
+ <div class="container"><div class="download-strip reveal"><div class="download-info"><img src="/assets/images/benchy-logo.png" alt=""><div><h2 data-i18n="downloadTitle">Télécharger Benchy</h2><p>Windows 10/11 · 64 bits · Version <span data-version>9.6.0</span></p></div></div><a class="btn btn-main" data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.2 10.7 4v7.1H3V5.2Zm8.8-1.4L21 2.5v8.6h-9.2V3.8ZM3 12.3h7.7V19L3 17.8v-5.5Zm8.8 0H21v8.6l-9.2-1.3v-7.3Z" fill="currentColor" stroke="none"/></svg><span data-i18n="official">Installateur officiel</span></a></div></div>
+</section>
 </main>
 
-<footer class="footer">
-  <div class="container footer-row">
-    <div class="footer-copy">© <span data-year></span> Hawks Inc · Benchy</div>
-    <div class="footer-links"><a href="./download/">Téléchargement</a><a href="./legal/">Mentions légales</a></div>
-  </div>
-</footer>
-<script src="./assets/js/benchy-v9604.js?v=9604"></script>
+<footer class="footer"><div class="container footer-row"><div class="footer-copy">© <span data-year></span> Hawks Inc · Benchy</div><div class="footer-links"><a href="/download/">Téléchargement</a><a href="/legal/">Mentions légales</a></div></div></footer>
+
+<script>
+if(window.paypal&&paypal.HostedButtons){paypal.HostedButtons({hostedButtonId:"WYR5KHABYAUXQ"}).render("#paypal-container-WYR5KHABYAUXQ");}
+</script>
+<script src="/assets/js/benchy-v9605.js?v=9605"></script>
 </body>
 </html>
