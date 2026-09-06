@@ -1,10 +1,14 @@
 (() => {
   const config = window.BENCHY_CONFIG || {};
+  const nestedPage = /\/(download|plus|checkout|legal|changelog)\//.test(window.location.pathname);
+  const sitePrefix = nestedPage ? '../' : './';
+  const assetPrefix = `${sitePrefix}assets/`;
+  document.querySelectorAll('img[src^="/assets/"], link[rel="icon"][href^="/assets/"]').forEach((node) => { const source = node.getAttribute('src') || node.getAttribute('href'); const relative = assetPrefix + source.split('/assets/')[1]; if (node.hasAttribute('src')) node.setAttribute('src', relative); if (node.hasAttribute('href')) node.setAttribute('href', relative); });
   const fallback = { version: '9.6.0', downloadUrl: '', releasePage: '' };
   const shots = {
-    pc: { src: "/assets/images/Capture%20d%27%C3%A9cran%202026-09-06%20175721.png", alt: 'Capture réelle de Benchy, écran Mon PC' },
-    games: { src: "/assets/images/Capture%20d%27%C3%A9cran%202026-09-06%20175657.png", alt: 'Capture réelle de Benchy, catalogue Jeux' },
-    compare: { src: "/assets/images/Capture%20d%27%C3%A9cran%202026-09-06%20175739.png", alt: 'Capture réelle de Benchy, comparateur GPU' }
+    pc: { src: `${assetPrefix}images/Capture%20d%27%C3%A9cran%202026-09-06%20175721.png`, alt: 'Capture réelle de Benchy, écran Mon PC' },
+    games: { src: `${assetPrefix}images/Capture%20d%27%C3%A9cran%202026-09-06%20175657.png`, alt: 'Capture réelle de Benchy, catalogue Jeux' },
+    compare: { src: `${assetPrefix}images/Capture%20d%27%C3%A9cran%202026-09-06%20175739.png`, alt: 'Capture réelle de Benchy, comparateur GPU' }
   };
   const translations = {
     fr: {
@@ -68,6 +72,6 @@
   document.querySelectorAll('[data-reveal]').forEach((node) => revealObserver.observe(node));
   applyLanguage(localStorage.getItem('benchy-language') || 'fr');
   setVersion(fallback); setDownloads(fallback);
-  fetch('/version.json', { cache: 'no-store' }).then((response) => response.ok ? response.json() : Promise.reject()).then((data) => { setVersion(data); setDownloads(data); }).catch(() => {});
+  fetch(`${sitePrefix}version.json`, { cache: 'no-store' }).then((response) => response.ok ? response.json() : Promise.reject()).then((data) => { setVersion(data); setDownloads(data); }).catch(() => {});
   if (window.lucide) window.lucide.createIcons();
 })();
