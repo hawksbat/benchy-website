@@ -2,52 +2,59 @@
 const FALLBACK_VERSION="9.6.0";
 const FALLBACK_DOWNLOAD="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe";
 
-const slides=[...document.querySelectorAll(".slide")];
-const title=document.querySelector("[data-slide-title]");
-const desc=document.querySelector("[data-slide-desc]");
-const counter=document.querySelector("[data-counter]");
-const progress=document.querySelector(".progress span");
-const labels=[
-  ["Mon PC","Une lecture claire de ta configuration, avec scores, classement, stockage et contrôle écran."],
-  ["Jeux","Recherche, recommandations et informations liées à la configuration détectée."],
-  ["Comparer","Scores, prix et rapport performance par euro dans une seule vue."]
-];
-let current=0;
-let timer=null;
-
-function show(i){
-  if(!slides.length)return;
-  current=(i+slides.length)%slides.length;
-  slides.forEach((s,n)=>s.classList.toggle("active",n===current));
-  if(title)title.textContent=labels[current][0];
-  if(desc)desc.textContent=labels[current][1];
-  if(counter)counter.textContent=String(current+1).padStart(2,"0")+" / "+String(slides.length).padStart(2,"0");
-  if(progress)progress.style.transform="translateX("+(current*100)+"%)";
-}
-function restart(){clearInterval(timer);timer=setInterval(()=>show(current+1),6500)}
-document.querySelector("[data-prev]")?.addEventListener("click",()=>{show(current-1);restart()});
-document.querySelector("[data-next]")?.addEventListener("click",()=>{show(current+1);restart()});
-
-const carousel=document.querySelector(".carousel");
-carousel?.addEventListener("mouseenter",()=>clearInterval(timer));
-carousel?.addEventListener("mouseleave",restart);
-let startX=0;
-carousel?.addEventListener("touchstart",e=>startX=e.touches[0].clientX,{passive:true});
-carousel?.addEventListener("touchend",e=>{
-  const d=e.changedTouches[0].clientX-startX;
-  if(Math.abs(d)>45){show(current+(d<0?1:-1));restart()}
+document.addEventListener("pointermove",e=>{
+  document.documentElement.style.setProperty("--mx",e.clientX+"px");
+  document.documentElement.style.setProperty("--my",e.clientY+"px");
 },{passive:true});
 
 const menuBtn=document.querySelector("[data-menu]");
-const mobileNav=document.querySelector("[data-mobile-nav]");
+const mobileMenu=document.querySelector("[data-mobile-menu]");
 menuBtn?.addEventListener("click",()=>{
-  const open=mobileNav.classList.toggle("open");
+  const open=mobileMenu.classList.toggle("open");
   menuBtn.setAttribute("aria-expanded",String(open));
 });
-mobileNav?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
-  mobileNav.classList.remove("open");
+mobileMenu?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+  mobileMenu.classList.remove("open");
   menuBtn?.setAttribute("aria-expanded","false");
 }));
+
+const track=document.querySelector("[data-track]");
+const slides=[...document.querySelectorAll("[data-slide]")];
+const tabs=[...document.querySelectorAll("[data-tab]")];
+const title=document.querySelector("[data-carousel-title]");
+const desc=document.querySelector("[data-carousel-desc]");
+const counter=document.querySelector("[data-carousel-counter]");
+const copy=[
+  ["Mon PC","Configuration, scores et informations utiles réunis dans une seule vue."],
+  ["Jeux","Recherche et recommandations liées à ta configuration."],
+  ["Comparer","Scores, prix et rapport performance / € pour comparer plus simplement."]
+];
+let current=0;
+let timer;
+
+function go(i){
+  if(!slides.length)return;
+  current=(i+slides.length)%slides.length;
+  if(track)track.style.transform=`translateX(-${current*100}%)`;
+  tabs.forEach((t,n)=>t.classList.toggle("active",n===current));
+  if(title)title.textContent=copy[current][0];
+  if(desc)desc.textContent=copy[current][1];
+  if(counter)counter.textContent=`${String(current+1).padStart(2,"0")} / ${String(slides.length).padStart(2,"0")}`;
+}
+function autoplay(){clearInterval(timer);timer=setInterval(()=>go(current+1),6500)}
+document.querySelector("[data-prev]")?.addEventListener("click",()=>{go(current-1);autoplay()});
+document.querySelector("[data-next]")?.addEventListener("click",()=>{go(current+1);autoplay()});
+tabs.forEach((t,i)=>t.addEventListener("click",()=>{go(i);autoplay()}));
+
+let x=0;
+const carousel=document.querySelector("[data-carousel]");
+carousel?.addEventListener("touchstart",e=>x=e.touches[0].clientX,{passive:true});
+carousel?.addEventListener("touchend",e=>{
+  const dx=e.changedTouches[0].clientX-x;
+  if(Math.abs(dx)>45){go(current+(dx<0?1:-1));autoplay()}
+},{passive:true});
+carousel?.addEventListener("mouseenter",()=>clearInterval(timer));
+carousel?.addEventListener("mouseleave",autoplay);
 
 const io=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
@@ -58,6 +65,7 @@ const io=new IntersectionObserver(entries=>{
   });
 },{threshold:.12});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
 document.querySelectorAll("[data-year]").forEach(el=>el.textContent=new Date().getFullYear());
 
 async function syncVersion(){
@@ -73,4 +81,4 @@ async function syncVersion(){
     document.querySelectorAll("[data-download]").forEach(el=>el.href=FALLBACK_DOWNLOAD);
   }
 }
-show(0);restart();syncVersion();
+go(0);autoplay();syncVersion();
