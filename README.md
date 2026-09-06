@@ -14,7 +14,7 @@ Renseigne l'URL de la release officielle dans `version.json` lorsque l'installat
 À chaque nouvelle version, mets à jour `version.json`. Benchy lit ce fichier pour détecter une MAJ sans serveur dédié.
 
 ## 3. PayPal
-Le Client ID PayPal est public et va dans `config.js`. Le Client Secret ne doit JAMAIS être mis dans GitHub Pages.
+Le Client ID PayPal est public et va dans `config.js`. Le secret PayPal serveur ne doit JAMAIS être mis dans GitHub Pages.
 Le dossier `worker/` contient un backend Cloudflare Worker minimal pour créer et capturer une commande PayPal.
 Dans Cloudflare Worker, ajoute les secrets `PAYPAL_CLIENT_ID` et `PAYPAL_CLIENT_SECRET`, déploie le Worker, puis mets son URL dans `paymentApiBase` de `config.js`.
 
