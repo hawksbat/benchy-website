@@ -10,8 +10,16 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <link rel="canonical" href="https://benchy-app.com/">
-  <link rel="icon" href="./favicon.ico" sizes="any">
-  <link rel="stylesheet" href="./assets/css/benchy-v960.css?v=9602">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico?v=9603">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png?v=9603">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png?v=9603">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png?v=9603">
+  <link rel="stylesheet" href="./assets/css/benchy-v960.css?v=9603">
+
+<script 
+  src="https://www.paypal.com/sdk/js?client-id=BAAspb7sEUs6UwzwmF7WPGrCjyskTWoa6N1C_EoVcwQVjpy9g0V3kfaO4oLPPH7_4M1nyrOI62aEx2w9Ug&components=hosted-buttons&disable-funding=venmo&currency=EUR">
+</script>
+
 </head>
 <body>
 <header class="header">
@@ -31,6 +39,7 @@
   <div class="mobile-menu" data-mobile-menu>
     <a href="#interface">Interface</a>
     <a href="#fonctionnalites">Fonctionnalités</a>
+    <a href="#plan">Plan</a>
     <a href="#telecharger">Télécharger</a>
     <a data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe">Télécharger Benchy</a>
   </div>
@@ -162,17 +171,76 @@
     </div>
   </section>
 
-  <section class="download-section" id="telecharger">
+  
+<section class="plan-section" id="plan">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-label">Plan</div>
+      <h2>Choisis la version qui te convient.</h2>
+      <p>Benchy reste utilisable gratuitement. Benchy+ ajoute les fonctions premium avec un achat unique.</p>
+    </div>
+
+    <div class="plan-grid reveal">
+      <article class="plan-card">
+        <div class="plan-top">
+          <div>
+            <div class="plan-name">Benchy</div>
+            <div class="plan-note">Version gratuite</div>
+          </div>
+          <div class="plan-price">0 €</div>
+        </div>
+        <div class="plan-features">
+          <div class="plan-feature"><span>Benchmark CPU / GPU / RAM / stockage</span><span class="yes">Inclus</span></div>
+          <div class="plan-feature"><span>Mon PC et informations matériel</span><span class="yes">Inclus</span></div>
+          <div class="plan-feature"><span>Catalogue jeux et recommandations</span><span class="yes">Inclus</span></div>
+          <div class="plan-feature"><span>Monitoring, stockage, processus, diagnostic</span><span class="yes">Inclus</span></div>
+          <div class="plan-feature"><span>Fonctions Benchy+ avancées</span><span>—</span></div>
+        </div>
+      </article>
+
+      <article class="plan-card premium">
+        <div class="plan-top">
+          <div>
+            <div class="plan-name">Benchy+</div>
+            <div class="plan-note">Paiement unique</div>
+          </div>
+          <div class="plan-price">19,99 €<small>lifetime</small></div>
+        </div>
+        <div class="plan-features">
+          <div class="plan-feature"><span>Tout Benchy gratuit</span><span class="yes">Inclus</span></div>
+          <div class="plan-feature"><span>Fonctions premium Benchy+</span><span class="plus">Inclus</span></div>
+          <div class="plan-feature"><span>Accès permanent à Benchy+</span><span class="plus">À vie</span></div>
+          <div class="plan-feature"><span>Mises à jour Benchy+</span><span class="plus">Incluses</span></div>
+          <div class="plan-feature"><span>Licence</span><span class="plus">Lifetime</span></div>
+        </div>
+        
+<div class="paypal-wrap">
+  <div id="paypal-container-WYR5KHABYAUXQ"></div>
+</div>
+<script>
+  if (window.paypal && paypal.HostedButtons) {
+    paypal.HostedButtons({
+      hostedButtonId: "WYR5KHABYAUXQ",
+    }).render("#paypal-container-WYR5KHABYAUXQ");
+  }
+</script>
+
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="download-section" id="telecharger">
     <div class="container">
       <div class="download-panel reveal">
         <img class="download-logo" src="./assets/images/benchy-logo.png" alt="Logo Benchy">
         <div class="download-copy">
-          <h2>Benchy pour Windows</h2>
+          <h2>Télécharger Benchy</h2>
           <p>Windows 10/11 · 64 bits · Version <span data-version>9.6.0</span></p>
         </div>
         <div class="download-actions">
           <a class="btn btn-main" data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.2 10.7 4v7.1H3V5.2Zm8.8-1.4L21 2.5v8.6h-9.2V3.8ZM3 12.3h7.7V19L3 17.8v-5.5Zm8.8 0H21v8.6l-9.2-1.3v-7.3Z" fill="currentColor" stroke="none"/></svg> Télécharger</a>
-          <span class="download-note">Installateur officiel</span>
+          <span class="download-note">Windows 10/11 · 64 bits</span>
         </div>
       </div>
     </div>
@@ -189,6 +257,6 @@
   </div>
 </footer>
 
-<script src="./assets/js/benchy-v960.js?v=9602"></script>
+<script src="./assets/js/benchy-v9603.js?v=9603"></script>
 </body>
 </html>
