@@ -3,199 +3,228 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Benchy — Benchmark, jeux et analyse PC</title>
-  <meta name="description" content="Benchy analyse ton PC, mesure ses performances et t'aide à comprendre comment tournent tes jeux.">
-  <meta name="theme-color" content="#101010">
+  <title>Benchy — Benchmark et analyse PC</title>
+  <meta name="description" content="Benchy analyse ton PC, mesure ses performances, compare ton matériel et t'aide à comprendre comment tournent tes jeux.">
+  <meta name="theme-color" content="#0f0f10">
   <meta property="og:title" content="Benchy — Benchmark et analyse PC">
   <meta property="og:description" content="Analyse ton matériel, mesure ses performances et découvre comment tournent tes jeux.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://benchy-app.com/">
   <link rel="canonical" href="https://benchy-app.com/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-row">
-      <a class="brand" href="/" aria-label="Benchy">
-        <img src="/assets/images/benchy-logo.png" alt="">
-        <span class="brand-copy">
-          <strong>BENCHY</strong>
-          <small>by Hawks Inc</small>
-        </span>
-      </a>
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      <img src="/assets/images/benchy-logo.png" alt="Logo Benchy">
+      <div><strong>BENCHY</strong><small>by Hawks Inc</small></div>
+    </a>
 
-      <nav class="desktop-nav" aria-label="Navigation principale">
-        <a href="#apercu">Aperçu</a>
-        <a href="#fonctionnalites">Fonctionnalités</a>
-        <a href="#telecharger">Télécharger</a>
-      </nav>
-
-      <div class="header-actions">
-        <a class="button button-primary" data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 4.4 10.5 3v8H2V4.4Zm9.5-1.55L22 1.3V11H11.5V2.85ZM2 12h8.5v8L2 18.6V12Zm9.5 0H22v9.7l-10.5-1.55V12Z"/></svg>
-          Télécharger
-        </a>
-      </div>
-
-      <button class="menu-button" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></svg>
-      </button>
-    </div>
-
-    <div class="mobile-menu">
+    <nav class="nav">
       <a href="#apercu">Aperçu</a>
       <a href="#fonctionnalites">Fonctionnalités</a>
       <a href="#telecharger">Télécharger</a>
-      <a class="button button-primary" data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe">Télécharger Benchy</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="nav-cta" data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe">
+        <i data-lucide="download" class="icon"></i>
+        Télécharger
+      </a>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="hero-badge reveal">Benchy · Windows</div>
-        <h1 class="reveal">Connais ton PC.<br>Maîtrise ses performances.</h1>
-        <p class="hero-copy reveal">Analyse ton matériel, mesure ses performances et découvre comment tournent tes jeux — sans passer par dix logiciels différents.</p>
-        <div class="hero-actions reveal">
-          <a class="button button-primary" data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 4.4 10.5 3v8H2V4.4Zm9.5-1.55L22 1.3V11H11.5V2.85ZM2 12h8.5v8L2 18.6V12Zm9.5 0H22v9.7l-10.5-1.55V12Z"/></svg>
-            Télécharger Benchy
-          </a>
-          <a class="button button-secondary" href="#apercu">Voir l'interface</a>
-        </div>
-        <div class="hero-meta reveal">Windows 10/11 · 64 bits · Version <span data-version>9.6.0</span></div>
+    <button class="menu" data-menu aria-label="Menu" aria-expanded="false">
+      <i data-lucide="menu" class="icon"></i>
+    </button>
+  </div>
+
+  <div class="mobile-nav" data-mobile-nav>
+    <a href="#apercu">Aperçu</a>
+    <a href="#fonctionnalites">Fonctionnalités</a>
+    <a href="#telecharger">Télécharger</a>
+    <a class="nav-cta" data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe">Télécharger Benchy</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="eyebrow animate__animated animate__fadeInUp">Benchy · Windows</div>
+      <h1 class="animate__animated animate__fadeInUp animate__faster">Comprends vraiment<br>ce que vaut ton PC.</h1>
+      <p class="animate__animated animate__fadeInUp">Benchmark, matériel, jeux, comparaison et utilisation réunis dans une seule application.</p>
+      <div class="hero-actions animate__animated animate__fadeInUp">
+        <a class="btn btn-primary" data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe">
+          <i data-lucide="download" class="icon"></i>
+          Télécharger Benchy
+        </a>
+        <a class="btn btn-secondary" href="#apercu">
+          Voir l'interface
+          <i data-lucide="arrow-down" class="icon"></i>
+        </a>
       </div>
-    </section>
+      <div class="hero-meta">Windows 10/11 · 64 bits · Version <span data-version>9.6.0</span></div>
+    </div>
+  </section>
 
+  <div class="container">
+    <div class="proof">
+      <div class="proof-item"><i data-lucide="gauge" class="icon"></i> Benchmark</div>
+      <div class="proof-item"><i data-lucide="cpu" class="icon"></i> Matériel</div>
+      <div class="proof-item"><i data-lucide="gamepad-2" class="icon"></i> Jeux</div>
+      <div class="proof-item"><i data-lucide="arrow-left-right" class="icon"></i> Comparaison</div>
+    </div>
+  </div>
+
+  <section class="section" id="apercu">
     <div class="container">
-      <div class="value-rail reveal" aria-label="Fonctions principales">
-        <div class="value-item"><strong>Benchmark</strong></div>
-        <div class="value-item"><strong>Jeux</strong></div>
-        <div class="value-item"><strong>Mon PC</strong></div>
-        <div class="value-item"><strong>Comparer</strong></div>
+      <div class="section-head">
+        <div class="kicker">Aperçu</div>
+        <h2>Le produit, pas un faux mockup.</h2>
+        <p>Les captures ci-dessous viennent directement de Benchy.</p>
+      </div>
+
+      <div class="carousel">
+        <div class="carousel-window">
+          <div class="carousel-stage">
+            <div class="slide active"><img src="/assets/images/benchy-pc.png" alt="Benchy Mon PC"></div>
+            <div class="slide"><img src="/assets/images/benchy-games.png" alt="Benchy Jeux"></div>
+            <div class="slide"><img src="/assets/images/benchy-compare.png" alt="Benchy Comparateur GPU"></div>
+          </div>
+          <div class="carousel-info">
+            <div>
+              <h3 data-slide-title>Mon PC</h3>
+              <p data-slide-text>Ta configuration détectée, classée et expliquée sans liste interminable de specs.</p>
+            </div>
+            <div class="carousel-buttons">
+              <button class="icon-btn" data-prev aria-label="Précédent"><i data-lucide="chevron-left" class="icon"></i></button>
+              <button class="icon-btn" data-next aria-label="Suivant"><i data-lucide="chevron-right" class="icon"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="dots">
+          <button class="dot active" aria-label="Mon PC"></button>
+          <button class="dot" aria-label="Jeux"></button>
+          <button class="dot" aria-label="Comparer"></button>
+        </div>
       </div>
     </div>
+  </section>
 
-    <section class="section showcase" id="apercu">
-      <div class="container">
-        <div class="section-heading reveal">
-          <div class="kicker">Aperçu</div>
-          <h2>La vraie interface. Rien d'inventé.</h2>
-          <p>Fais défiler les captures pour voir les principales vues de Benchy.</p>
+  <section class="editorial" id="fonctionnalites">
+    <div class="container">
+
+      <article class="feature-row">
+        <div class="feature-copy">
+          <div class="feature-index"><i data-lucide="cpu" class="icon"></i> Matériel</div>
+          <h3>Ton PC, situé dans le contexte.</h3>
+          <p>Benchy ne se contente pas d'afficher le nom de tes composants. Il les classe, met en évidence leurs scores et te donne une lecture rapide de ta configuration.</p>
+          <ul class="feature-list">
+            <li><i data-lucide="check" class="icon"></i> Détection CPU, GPU, RAM et stockage</li>
+            <li><i data-lucide="check" class="icon"></i> Classement et score de chaque composant</li>
+            <li><i data-lucide="check" class="icon"></i> Rapport matériel copiable</li>
+            <li><i data-lucide="check" class="icon"></i> Contrôle luminosité / contraste quand l'écran le permet</li>
+          </ul>
         </div>
-
-        <div class="carousel reveal" aria-roledescription="carrousel" aria-label="Captures de Benchy">
-          <div class="carousel-frame">
-            <div class="carousel-stage">
-              <div class="slide active" aria-hidden="false">
-                <img src="/assets/images/benchy-pc.png" alt="Vue Mon PC de Benchy">
-              </div>
-              <div class="slide" aria-hidden="true">
-                <img src="/assets/images/benchy-games.png" alt="Catalogue de jeux de Benchy">
-              </div>
-              <div class="slide" aria-hidden="true">
-                <img src="/assets/images/benchy-compare.png" alt="Comparateur GPU de Benchy">
-              </div>
-            </div>
-
-            <div class="carousel-footer">
-              <div class="slide-copy">
-                <h3 data-caption-title>Mon PC</h3>
-                <p data-caption-text>CPU, GPU, RAM, stockage et écran réunis dans une vue simple.</p>
-              </div>
-              <div class="carousel-controls">
-                <button class="carousel-arrow" data-prev type="button" aria-label="Capture précédente">
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m14.7 6.3-1.4-1.4L6.2 12l7.1 7.1 1.4-1.4L9 12l5.7-5.7Z"/></svg>
-                </button>
-                <button class="carousel-arrow" data-next type="button" aria-label="Capture suivante">
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m9.3 17.7 1.4 1.4 7.1-7.1-7.1-7.1-1.4 1.4L15 12l-5.7 5.7Z"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-dots">
-            <button class="carousel-dot active" type="button" aria-label="Mon PC"></button>
-            <button class="carousel-dot" type="button" aria-label="Jeux"></button>
-            <button class="carousel-dot" type="button" aria-label="Comparer"></button>
-          </div>
+        <div class="feature-visual">
+          <div class="screen"><img src="/assets/images/benchy-pc.png" alt="Vue matériel Benchy"></div>
+          <div class="feature-note">Exemple réel : Benchy affiche ici CPU, GPU, RAM, stockage et réglages écran dans la même page.</div>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="section" id="fonctionnalites">
-      <div class="container">
-        <div class="section-heading reveal">
-          <div class="kicker">Fonctionnalités</div>
-          <h2>Juste ce qui sert vraiment.</h2>
-          <p>Benchy regroupe les fonctions essentielles pour comprendre ton PC, sans interface inutilement chargée.</p>
+      <article class="feature-row reverse">
+        <div class="feature-copy">
+          <div class="feature-index"><i data-lucide="gamepad-2" class="icon"></i> Jeux</div>
+          <h3>Choisis un jeu. Benchy fait le lien avec ton PC.</h3>
+          <p>Le catalogue ne sert pas juste à afficher des jaquettes : il sert de point d'entrée pour comprendre la compatibilité et les performances attendues avec ta configuration.</p>
+          <ul class="feature-list">
+            <li><i data-lucide="check" class="icon"></i> Recherche de jeux</li>
+            <li><i data-lucide="check" class="icon"></i> Recommandations Benchy</li>
+            <li><i data-lucide="check" class="icon"></i> Lecture liée à la configuration détectée</li>
+            <li><i data-lucide="check" class="icon"></i> Catalogue visuel avec informations utiles</li>
+          </ul>
         </div>
-
-        <div class="feature-grid">
-          <article class="feature-card reveal">
-            <div class="feature-icon">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h2v2h6V2h2v2h1a2 2 0 0 1 2 2v1h2v2h-2v6h2v2h-2v1a2 2 0 0 1-2 2h-1v2h-2v-2H9v2H7v-2H6a2 2 0 0 1-2-2v-1H2v-2h2V9H2V7h2V6a2 2 0 0 1 2-2h1V2Zm-1 4v12h12V6H6Zm3 3h6v6H9V9Z"/></svg>
-            </div>
-            <h3>Benchmark</h3>
-            <p>Mesure CPU, GPU, RAM et stockage, puis retrouve tes résultats dans une vue claire.</p>
-          </article>
-
-          <article class="feature-card reveal">
-            <div class="feature-icon">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 6h10a5 5 0 0 1 4.8 6.4l-1.5 5A2.2 2.2 0 0 1 16.1 18l-1.2-2H9.1l-1.2 2a2.2 2.2 0 0 1-4.2-.6l-1.5-5A5 5 0 0 1 7 6Zm0 2a3 3 0 0 0-2.9 3.8l1.5 5c0 .1.2.2.3 0L8 14h8l2.1 2.8c.1.2.3.1.3 0l1.5-5A3 3 0 0 0 17 8H7Zm1 2h2v2h2v2h-2v2H8v-2H6v-2h2v-2Zm8 1h2v2h-2v-2Zm-2 2h2v2h-2v-2Z"/></svg>
-            </div>
-            <h3>Jeux</h3>
-            <p>Recherche un jeu et vois rapidement si ta configuration est adaptée.</p>
-          </article>
-
-          <article class="feature-card reveal">
-            <div class="feature-icon">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5h11v2H8v3L3 6l5-4v3Zm8 9 5 4-5 4v-3H5v-2h11v-3Z"/></svg>
-            </div>
-            <h3>Comparer</h3>
-            <p>Compare CPU et GPU avec performances, prix et rapport performance par euro.</p>
-          </article>
+        <div class="feature-visual">
+          <div class="screen"><img src="/assets/images/benchy-games.png" alt="Catalogue jeux Benchy"></div>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="section">
-      <div class="container">
-        <div class="inline-cta reveal">
-          <div>
-            <h3>Tout commence par ta configuration.</h3>
-            <p>Benchy détecte ton matériel et centralise les informations utiles au même endroit.</p>
-          </div>
-          <a class="button button-primary" href="#telecharger">Installer Benchy</a>
+      <article class="feature-row">
+        <div class="feature-copy">
+          <div class="feature-index"><i data-lucide="arrow-left-right" class="icon"></i> Comparer</div>
+          <h3>Performance seule, ça ne suffit pas.</h3>
+          <p>Le comparateur met ensemble score, prix médian et rapport performance par euro pour rendre une différence réellement utile au moment de choisir.</p>
+          <ul class="feature-list">
+            <li><i data-lucide="check" class="icon"></i> Comparaison CPU et GPU</li>
+            <li><i data-lucide="check" class="icon"></i> Score de performance</li>
+            <li><i data-lucide="check" class="icon"></i> Prix neuf / occasion quand disponible</li>
+            <li><i data-lucide="check" class="icon"></i> Rapport performance / €</li>
+          </ul>
         </div>
-      </div>
-    </section>
-
-    <section class="download-area" id="telecharger">
-      <div class="container">
-        <div class="download-card reveal">
-          <img src="/assets/images/benchy-logo.png" alt="Logo Benchy">
-          <h2>Télécharger Benchy</h2>
-          <p>Windows 10/11 · 64 bits · Version <span data-version>9.6.0</span></p>
-          <a class="button button-primary" data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 4.4 10.5 3v8H2V4.4Zm9.5-1.55L22 1.3V11H11.5V2.85ZM2 12h8.5v8L2 18.6V12Zm9.5 0H22v9.7l-10.5-1.55V12Z"/></svg>
-            Télécharger l'installateur
-          </a>
+        <div class="feature-visual">
+          <div class="screen"><img src="/assets/images/benchy-compare.png" alt="Comparateur Benchy"></div>
         </div>
-      </div>
-    </section>
-  </main>
+      </article>
 
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <div class="footer-copy">© <span data-year></span> Hawks Inc · Benchy</div>
-      <nav class="footer-links" aria-label="Pied de page">
-        <a href="/download/">Téléchargement</a>
-        <a href="/legal/">Mentions légales</a>
-      </nav>
     </div>
-  </footer>
+  </section>
 
-  <script src="/assets/js/app.js"></script>
+  <section class="utility-section">
+    <div class="container">
+      <div class="utility-head">
+        <h2>Et pour le reste du PC.</h2>
+        <p>Des outils utiles au quotidien, sans remplir la page de cartes décoratives.</p>
+      </div>
+
+      <div class="utility-grid">
+        <div class="utility-item">
+          <div class="utility-icon"><i data-lucide="activity" class="icon"></i></div>
+          <div><h3>Utilisation</h3><p>Monitoring CPU, GPU, RAM et stockage avec les données importantes regroupées au même endroit.</p></div>
+        </div>
+        <div class="utility-item">
+          <div class="utility-icon"><i data-lucide="hard-drive" class="icon"></i></div>
+          <div><h3>Analyse du stockage</h3><p>Repère les disques, applications, dossiers et fichiers qui occupent réellement l'espace.</p></div>
+        </div>
+        <div class="utility-item">
+          <div class="utility-icon"><i data-lucide="list-tree" class="icon"></i></div>
+          <div><h3>Processus</h3><p>Identifie rapidement les applications qui consomment le plus de ressources.</p></div>
+        </div>
+        <div class="utility-item">
+          <div class="utility-icon"><i data-lucide="stethoscope" class="icon"></i></div>
+          <div><h3>Diagnostic</h3><p>Centralise les contrôles utiles pour comprendre l'état général de la machine.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="download" id="telecharger">
+    <div class="container">
+      <div class="download-card">
+        <img src="/assets/images/benchy-logo.png" alt="Logo Benchy">
+        <h2>Télécharger Benchy</h2>
+        <p>Windows 10/11 · 64 bits · Version <span data-version>9.6.0</span></p>
+        <a class="btn btn-primary" data-download href="https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe">
+          <i data-lucide="download" class="icon"></i>
+          Télécharger l'installateur
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <div class="footer-copy">© <span data-year></span> Hawks Inc · Benchy</div>
+    <div class="footer-links">
+      <a href="/download/">Téléchargement</a>
+      <a href="/legal/">Mentions légales</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="/assets/js/app.js"></script>
 </body>
 </html>
