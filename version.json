@@ -1,9 +1,6 @@
 {
   "version": "9.6.0",
-  "channel": "stable",
-  "downloadUrl": "",
-  "releasePage": "",
-  "releaseNotes": ["Version de developpement Benchy 9.6.0."],
-  "publishedAt": "",
+  "downloadUrl": "https://github.com/hawksbat/Benchy/releases/download/v9.6.0/Benchy_Setup.exe",
+  "releaseNotes": "",
   "mandatory": false
 }
