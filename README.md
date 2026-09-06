@@ -1,25 +1,53 @@
-# Benchy website — benchy-app.com
+# Benchy website
 
-Site statique prêt pour GitHub Pages + petit Worker Cloudflare optionnel pour PayPal.
+Official Benchy website for `benchy-app.com`, built as a static Vite multi-page site.
 
-## 1. GitHub Pages
-1. Crée un dépôt GitHub, par exemple `benchy-site`.
-2. Mets tous les fichiers de ce dossier à la racine du dépôt puis `git push`.
-3. GitHub > Settings > Pages > Deploy from a branch > `main` / root.
-4. Le fichier `CNAME` contient déjà `benchy-app.com`.
-5. Chez Amen, configure les DNS demandés par GitHub Pages pour le domaine personnalisé.
+## Development
 
-## 2. Téléchargement / releases
-Renseigne l'URL de la release officielle dans `version.json` lorsque l'installateur est publié.
-À chaque nouvelle version, mets à jour `version.json`. Benchy lit ce fichier pour détecter une MAJ sans serveur dédié.
+```bash
+npm install
+npm run dev
+```
 
-## 3. PayPal
-Le Client ID PayPal est public et va dans `config.js`. Le secret PayPal serveur ne doit JAMAIS être mis dans GitHub Pages.
-Le dossier `worker/` contient un backend Cloudflare Worker minimal pour créer et capturer une commande PayPal.
-Dans Cloudflare Worker, ajoute le Client ID et le secret PayPal comme variables secrètes, déploie le Worker, puis mets son URL dans `paymentApiBase` de `config.js`.
+## Production
 
-## 4. Avant mise en production
-- complète `/legal/` avec tes vraies mentions légales, CGV et politique de confidentialité ;
-- choisis le vrai prix Benchy+ dans `config.js` ;
-- configure le système de licence/activation après paiement si Benchy+ doit s'activer automatiquement ;
-- signe numériquement l'installateur Windows si possible.
+```bash
+npm run build
+npm run preview
+```
+
+The build output is `dist/`. It contains the generated HTML routes, compiled Tailwind CSS, bundled JavaScript, public screenshots, `version.json`, and `CNAME`.
+
+## Routes
+
+- `/` homepage
+- `/download/` Windows download page
+- `/changelog/` update page
+- `/premium/` Premium page
+- `/plus/` compatibility route for Benchy+
+- `/checkout/` PayPal-ready checkout state
+- `/legal/` legal information
+
+## Assets
+
+Real assets are copied into `public/assets/` with clean public names:
+
+- `images/benchy-logo.png`
+- `screenshots/benchy-games.png`
+- `screenshots/benchy-hardware.png`
+- `screenshots/benchy-compare.png`
+- `icons/windows.svg`
+
+The original supplied files remain under `assets/images/`.
+
+## Releases
+
+`version.json` is the source of truth for the displayed version, notes, and installer URL. Set `downloadUrl` to the direct GitHub Release asset when the Windows installer is published. Until then, buttons remain styled but show `Téléchargement bientôt disponible`.
+
+## GitHub Pages
+
+The workflow at `.github/workflows/deploy-pages.yml` runs `npm ci`, `npm run build`, uploads `dist/`, and deploys GitHub Pages. The custom domain is preserved through `public/CNAME`.
+
+## Premium and PayPal
+
+Premium pricing remains unavailable until configured. PayPal secrets belong only in the Cloudflare Worker environment. Never add server credentials to `config.js`, `public/`, or frontend source.

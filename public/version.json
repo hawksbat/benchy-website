@@ -1,0 +1,9 @@
+{
+  "version": "9.6.0",
+  "channel": "stable",
+  "downloadUrl": "",
+  "releasePage": "",
+  "releaseNotes": ["Version de developpement Benchy 9.6.0."],
+  "publishedAt": "",
+  "mandatory": false
+}
