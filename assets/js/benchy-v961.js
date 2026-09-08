@@ -128,3 +128,5 @@ fetch("./version.json",{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject(
  document.querySelectorAll("[data-version]").forEach(el=>el.textContent=v);
  document.querySelectorAll("[data-download]").forEach(el=>el.href=u);
 }).catch(()=>document.querySelectorAll("[data-download]").forEach(el=>el.href=fallbackDownload));
+
+let benchyCarouselTimer=setInterval(()=>go(current+1),5500); document.querySelector(".carousel")?.addEventListener("mouseenter",()=>clearInterval(benchyCarouselTimer));
