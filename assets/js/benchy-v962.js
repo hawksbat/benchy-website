@@ -1,6 +1,6 @@
 
-const fallbackVersion="9.6.1";
-const fallbackDownload="https://github.com/hawksbat/Benchy/releases/download/v9.6.1/Benchy_9.6.0.exe";
+const fallbackVersion="9.6.2";
+const fallbackDownload="https://github.com/hawksbat/Benchy/releases";
 
 const root=document.documentElement;
 const savedTheme=localStorage.getItem("benchy-theme")||"dark";
@@ -130,3 +130,5 @@ fetch("./version.json",{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject(
 }).catch(()=>document.querySelectorAll("[data-download]").forEach(el=>el.href=fallbackDownload));
 
 let benchyCarouselTimer=setInterval(()=>go(current+1),5500); document.querySelector(".carousel")?.addEventListener("mouseenter",()=>clearInterval(benchyCarouselTimer));
+
+fetch("https://api.github.com/repos/hawksbat/Benchy/releases/latest",{cache:"no-store"}).then(r=>r.json()).then(rel=>{const v=(rel.tag_name||"").replace(/^v/i,"");const a=(rel.assets||[]).find(x=>/^Benchy[_-].*\.exe$/i.test(x.name))||(rel.assets||[]).find(x=>/\.exe$/i.test(x.name));if(v)document.querySelectorAll("[data-version]").forEach(e=>e.textContent=v);if(a)document.querySelectorAll("[data-download]").forEach(e=>e.href=a.browser_download_url);}).catch(()=>{});

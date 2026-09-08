@@ -1,6 +1,6 @@
 {
-  "version": "9.6.1",
-  "downloadUrl": "https://github.com/hawksbat/Benchy/releases/download/v9.6.1/Benchy_9.6.0.exe",
-  "releaseNotes": "Benchy 9.6.1",
+  "version": "9.6.2",
+  "downloadUrl": "https://github.com/hawksbat/Benchy/releases",
+  "releaseNotes": "Fallback uniquement. Le site et Benchy utilisent désormais GitHub Releases/latest.",
   "mandatory": false
 }
