@@ -2,48 +2,44 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Benchy — Benchmark Windows</title>
 <meta name="description" content="Benchmark, monitoring, jeux et comparaison PC dans Benchy.">
-<meta name="theme-color" content="#080809">
+<meta name="theme-color" content="#09090a">
 <link rel="canonical" href="https://benchy-app.com/">
 <link rel="icon" type="image/png" href="/benchy-favicon-v9605.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon-v9605.png">
-<link rel="stylesheet" href="/assets/css/benchy-v970.css?v=9702">
+<link rel="stylesheet" href="/assets/css/benchy-v970.css?v=9705">
 <script src="https://unpkg.com/lucide@latest"></script>
 <script src="https://www.paypal.com/sdk/js?client-id=BAAspb7sEUs6UwzwmF7WPGrCjyskTWoa6N1C_EoVcwQVjpy9g0V3kfaO4oLPPH7_4M1nyrOI62aEx2w9Ug&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
 </head>
 <body>
-
-<header>
+<header class="site-header">
   <div class="shell nav">
-    <a class="brand" href="#top">
+    <a class="brand" href="#top" aria-label="Benchy">
       <img src="/assets/images/benchy-logo.png" alt="">
       <span>BENCHY<small>HAWKS INC.</small></span>
     </a>
-    <nav class="desktop-nav">
+    <nav class="desktop-nav" aria-label="Navigation principale">
       <a href="#features">Fonctions</a>
+      <a href="#live">Benchmark</a>
       <a href="#preview">Aperçu</a>
       <a href="#plus">Benchy+</a>
     </nav>
-    <div class="nav-right">
-      <span class="build">v<span data-version>9.7.0</span></span>
-      <a class="nav-download" data-download href="https://github.com/hawksbat/Benchy/releases" aria-label="Télécharger Benchy">
-        <span class="nav-win">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.2 10.7 4v7.1H3V5.2Zm8.8-1.4L21 2.5v8.6h-9.2V3.8ZM3 12.3h7.7V19L3 17.8v-5.5Zm8.8 0H21v8.6l-9.2-1.3v-7.3Z"/></svg>
-        </span>
-        <span class="nav-download-label">Télécharger</span>
+    <div class="nav-actions">
+      <a class="header-download" data-download href="https://github.com/hawksbat/Benchy/releases" aria-label="Télécharger Benchy">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.2 10.7 4v7.1H3V5.2Zm8.8-1.4L21 2.5v8.6h-9.2V3.8ZM3 12.3h7.7V19L3 17.8v-5.5Zm8.8 0H21v8.6l-9.2-1.3v-7.3Z"/></svg>
+        <span>Télécharger</span>
       </a>
-      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle>
-        <span></span><span></span>
-      </button>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-toggle><span></span><span></span></button>
     </div>
   </div>
 </header>
 <div class="mobile-menu" data-mobile-menu>
-  <a href="#features">Fonctions </a>
-  <a href="#preview">Aperçu </a>
-  <a href="#plus">Benchy+ </a>
+  <a href="#features">Fonctions</a>
+  <a href="#live">Benchmark</a>
+  <a href="#preview">Aperçu</a>
+  <a href="#plus">Benchy+</a>
   <a class="mobile-download" data-download href="https://github.com/hawksbat/Benchy/releases">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.2 10.7 4v7.1H3V5.2Zm8.8-1.4L21 2.5v8.6h-9.2V3.8ZM3 12.3h7.7V19L3 17.8v-5.5Zm8.8 0H21v8.6l-9.2-1.3v-7.3Z"/></svg>
     Télécharger Benchy
@@ -52,110 +48,80 @@
 
 <main id="top">
 <section class="hero">
-  <div class="shell hero-wrap">
+  <div class="shell hero-grid">
     <div class="hero-copy reveal">
-      <div class="kicker">BENCHMARK WINDOWS</div>
-      <h1>Mesure ton PC.<br><span>Compare tes performances.</span></h1>
-      <p>Benchmark, monitoring, jeux et comparaison dans une seule application.</p>
-
-      <a class="download-hero magnetic" data-download href="https://github.com/hawksbat/Benchy/releases">
-        <span class="windows-mark">
-          <svg viewBox="0 0 24 24"><path d="M3 5.2 10.7 4v7.1H3V5.2Zm8.8-1.4L21 2.5v8.6h-9.2V3.8ZM3 12.3h7.7V19L3 17.8v-5.5Zm8.8 0H21v8.6l-9.2-1.3v-7.3Z"/></svg>
-        </span>
-        <span class="download-copy"><strong>Télécharger Benchy</strong><small>Windows 10 / 11 · x64 · v<span data-version>9.7.0</span></small></span>
-        
+      <div class="eyebrow">BENCHMARK WINDOWS</div>
+      <h1>Mesure ton PC.<br><span>Vois ce qu’il vaut.</span></h1>
+      <p>Benchmark, monitoring, FPS et comparaison. Rien de plus compliqué.</p>
+      <a class="hero-download" data-download href="https://github.com/hawksbat/Benchy/releases">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.2 10.7 4v7.1H3V5.2Zm8.8-1.4L21 2.5v8.6h-9.2V3.8ZM3 12.3h7.7V19L3 17.8v-5.5Zm8.8 0H21v8.6l-9.2-1.3v-7.3Z"/></svg>
+        <span><strong>Télécharger Benchy</strong><small>Windows 10 / 11 · 64 bits</small></span>
       </a>
     </div>
 
-    <div class="hero-machine reveal" data-parallax>
-      <div class="machine-grid"></div>
-      <div class="machine-orbit orbit-a"></div>
-      <div class="machine-orbit orbit-b"></div>
-      
-      <div class="machine-core">
-        <div class="core-label">BENCHY SCORE</div>
-        <strong data-count="8717">0</strong>
-        <div class="core-grade"><i></i> EXCELLENT</div>
+    <div class="hero-dashboard reveal" aria-label="Aperçu des performances Benchy">
+      <div class="dashboard-top"><span>PERFORMANCES</span><b>EN DIRECT</b></div>
+      <div class="score-row">
+        <div class="score-gauge"><div class="score-center"><small>SCORE</small><strong data-count="8717">0</strong><span>Excellent</span></div></div>
+        <div class="score-metrics">
+          <div><span>GPU</span><strong>92%</strong><i style="--w:92%"></i></div>
+          <div><span>CPU</span><strong>74%</strong><i style="--w:74%"></i></div>
+          <div><span>RAM</span><strong>44%</strong><i style="--w:44%"></i></div>
+        </div>
       </div>
-
-      <div class="telemetry t1"><span>GPU</span><b>92%</b><small>RX 6650 XT</small></div>
-      <div class="telemetry t2"><span>CPU</span><b>74%</b><small>STABLE</small></div>
-      <div class="telemetry t3"><span>RAM</span><b>32 GB</b><small>44%</small></div>
-      <div class="telemetry t4"><span>FPS</span><b>72</b><small>CYBERPUNK</small></div>
-      
+      <div class="dashboard-games">
+        <span>Cyberpunk 2077</span><b>72 FPS</b><span>Jedi Survivor</span><b>61 FPS</b><span>GTA V</span><b>120+ FPS</b>
+      </div>
     </div>
-  </div>
-</section>
-
-<section class="signal">
-  <div class="signal-track">
-    <span>QUICK TEST</span><i></i><span>FULL TEST</span><i></i><span>MONITORING</span><i></i>
-    <span>FPS</span><i></i><span>COMPARE</span><i></i><span>DIAGNOSTIC</span><i></i>
-    <span>QUICK TEST</span><i></i><span>FULL TEST</span><i></i><span>MONITORING</span>
   </div>
 </section>
 
 <section id="features" class="features">
   <div class="shell">
-    <div class="section-head reveal">
-      <span>01</span>
-      <h2>Tout ce qu’il faut pour mesurer ton PC.</h2>
-    </div>
-
+    <div class="section-title reveal"><h2>Les fonctions utiles, au même endroit.</h2></div>
     <div class="feature-grid">
-      <article class="panel panel-score reveal">
-        <div class="panel-head"><span>BENCHMARK</span><i data-lucide="activity"></i></div>
-        <div class="score-display"><strong>8 717</strong><small>+18%</small></div>
-        <div class="score-ring"><span></span><span></span><span></span></div>
-        <div class="mini-labels"><b>CPU 79</b><b>GPU 92</b><b>RAM 84</b></div>
+      <article class="feature-card reveal">
+        <div class="feature-title"><i data-lucide="gauge"></i><span>Benchmark</span></div>
+        <strong class="feature-number">8 717</strong>
+        <div class="feature-scale"><i style="--w:87%"></i></div>
+        <p>Score global et sous-scores CPU, GPU, RAM et stockage.</p>
       </article>
-
-      <article class="panel panel-monitor reveal">
-        <div class="panel-head"><span>MONITORING</span><i data-lucide="gauge"></i></div>
-        <div class="wave" aria-hidden="true"><svg viewBox="0 0 500 120" preserveAspectRatio="none"><path d="M0,80 C40,70 48,20 85,55 S130,100 168,54 S220,22 250,72 S310,110 345,52 S410,25 500,58"/></svg></div>
-        <div class="metric-row"><span>GPU</span><b>67%</b></div>
-        <div class="metric-row"><span>CPU</span><b>38%</b></div>
-        <div class="metric-row"><span>RAM</span><b>44%</b></div>
+      <article class="feature-card reveal">
+        <div class="feature-title"><i data-lucide="activity"></i><span>Monitoring</span></div>
+        <div class="monitor-list"><div><span>GPU</span><b>67%</b></div><div><span>CPU</span><b>38%</b></div><div><span>RAM</span><b>44%</b></div></div>
+        <div class="mini-chart"><svg viewBox="0 0 420 70" preserveAspectRatio="none"><path d="M0,48 C38,42 62,18 94,30 S148,62 185,37 S236,12 274,36 S338,58 420,22"/></svg></div>
       </article>
-
-      <article class="panel panel-games reveal">
-        <div class="panel-head"><span>JEUX</span><i data-lucide="gamepad-2"></i></div>
-        <div class="fps-card"><span>CYBERPUNK 2077</span><strong>72 <small>FPS</small></strong><i>HIGH</i></div>
-        <div class="fps-card"><span>JEDI SURVIVOR</span><strong>61 <small>FPS</small></strong><i>HIGH</i></div>
-        <div class="fps-card"><span>GTA V</span><strong>120+ <small>FPS</small></strong><i>ULTRA</i></div>
+      <article class="feature-card reveal">
+        <div class="feature-title"><i data-lucide="gamepad-2"></i><span>Jeux</span></div>
+        <div class="game-list"><div><span>Cyberpunk 2077</span><b>72 FPS</b></div><div><span>Jedi Survivor</span><b>61 FPS</b></div><div><span>GTA V</span><b>120+</b></div></div>
       </article>
-
-      <article class="panel panel-compare reveal">
-        <div class="panel-head"><span>COMPARER</span><i data-lucide="arrow-left-right"></i></div>
-        <div class="duel">
-          <div><small>TOI</small><strong>8717</strong></div>
-          <span>+5017</span>
-          <div><small>AMI</small><strong>3700</strong></div>
-        </div>
-        <div class="duel-bar"><i></i></div>
+      <article class="feature-card reveal">
+        <div class="feature-title"><i data-lucide="arrow-left-right"></i><span>Comparer</span></div>
+        <div class="compare-head"><div><small>TOI</small><strong>8717</strong></div><div><small>AMI</small><strong>3700</strong></div></div>
+        <div class="compare-bars"><i class="you"></i><i class="friend"></i></div>
+        <p>Compare les scores et les composants sans tableau illisible.</p>
       </article>
     </div>
   </div>
 </section>
 
-<section class="stage">
-  <div class="shell stage-shell">
-    <div class="stage-title reveal"><span>02</span><h2>Benchmark en temps réel.</h2></div>
-    <div class="stage-ui reveal">
-      <div class="stage-rail">
-        <i class="active"></i><i></i><i></i><i></i><i></i><i></i>
-      </div>
-      <div class="stage-main">
-        <div class="stage-top"><span>FULL TEST</span><b>67%</b></div>
-        <div class="stage-progress"><i></i></div>
-        <div class="stage-center">
-          <div class="radar"><i></i><i></i><i></i><span></span></div>
-          <div class="stage-data">
-            <small>GPU LOAD</small><strong>98%</strong>
-            <small>TEMP</small><strong>67°C</strong>
-          </div>
+<section id="live" class="live-section">
+  <div class="shell">
+    <div class="section-title reveal"><h2>Benchmark en temps réel.</h2></div>
+    <div class="live-card reveal">
+      <div class="live-head"><div><span>FULL TEST</span><strong>GPU</strong></div><b>67%</b></div>
+      <div class="progress"><i></i></div>
+      <div class="live-body">
+        <div class="load-ring"><div><small>CHARGE GPU</small><strong>98%</strong><span>67°C</span></div></div>
+        <div class="live-graph">
+          <div class="graph-labels"><span>UTILISATION</span><b>0:42 restantes</b></div>
+          <svg viewBox="0 0 620 190" preserveAspectRatio="none" aria-hidden="true">
+            <defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fa643f" stop-opacity=".30"/><stop offset="1" stop-color="#fa643f" stop-opacity="0"/></linearGradient></defs>
+            <path class="area" d="M0 145 C48 130,72 82,120 102 S192 164,245 105 S330 66,384 114 S470 138,520 76 S580 66,620 88 L620 190 L0 190 Z"/>
+            <path class="line" d="M0 145 C48 130,72 82,120 102 S192 164,245 105 S330 66,384 114 S470 138,520 76 S580 66,620 88"/>
+          </svg>
+          <div class="live-stats"><div><span>GPU</span><b>98%</b></div><div><span>CPU</span><b>71%</b></div><div><span>RAM</span><b>44%</b></div><div><span>VRAM</span><b>6.2 GB</b></div></div>
         </div>
-        <div class="stage-bottom"><span>GPU</span><span>CPU</span><span>RAM</span><span>STORAGE</span></div>
       </div>
     </div>
   </div>
@@ -163,79 +129,46 @@
 
 <section id="preview" class="preview">
   <div class="shell">
-    <div class="section-head slim reveal"><span>03</span><h2>Aperçu de Benchy</h2></div>
-    <div class="preview-shell reveal">
-      <div class="preview-tabs">
+    <div class="section-title reveal"><h2>Aperçu de Benchy</h2></div>
+    <div class="preview-card reveal">
+      <div class="preview-tabs" role="tablist" aria-label="Captures Benchy">
         <button class="active" data-peek="0">Mon PC</button>
         <button data-peek="1">Jeux</button>
         <button data-peek="2">Comparer</button>
       </div>
-      <div class="preview-frame">
-        <img data-peek-img src="/assets/images/benchy-pc.png" alt="Interface Benchy">
-        <div class="preview-mask"></div>
-        <div class="preview-scan"></div>
-      </div>
-      <div class="preview-side">
-        <div><span>OS</span><b>WINDOWS</b></div>
-        <div><span>BUILD</span><b data-version>9.7.0</b></div>
-        <div><span>MODE</span><b>LOCAL</b></div>
-      </div>
+      <div class="preview-window"><img data-peek-img src="/assets/images/benchy-pc.png" alt="Interface Mon PC de Benchy"></div>
     </div>
   </div>
 </section>
 
 <section id="plus" class="plus">
   <div class="shell plus-card reveal">
-    <div class="plus-copy">
-      <span>BENCHY+</span>
-      <h2>Benchy+</h2>
-      <div class="plus-price"><strong>19,99 €</strong><small>À VIE</small></div>
-      <button class="plus-button magnetic" data-buy>Passer à Benchy+</button>
+    <div class="plus-main">
+      <span>BENCHY+</span><h2>19,99 €</h2><p>Licence à vie.</p>
+      <button class="plus-button" data-buy>Passer à Benchy+</button>
     </div>
-    <div class="plus-grid">
-      <div><span>Quick Test</span><b>FREE</b></div>
-      <div><span>Monitoring</span><b>FREE</b></div>
-      <div><span>Jeux</span><b>FREE</b></div>
-      <div class="plus-only"><span>Full Test</span><b>PLUS</b></div>
-      <div class="plus-only"><span>Détails avancés</span><b>PLUS</b></div>
-      <div class="plus-only"><span>Licence à vie</span><b>PLUS</b></div>
+    <div class="plus-features">
+      <div><i data-lucide="check"></i><span>Full Test</span></div>
+      <div><i data-lucide="check"></i><span>Détails avancés</span></div>
+      <div><i data-lucide="check"></i><span>Comparaison complète</span></div>
+      <div><i data-lucide="check"></i><span>Paiement unique</span></div>
     </div>
   </div>
 </section>
 
-<section class="final">
-  <div class="shell final-grid reveal">
-    <div>
-      <span>BENCHY</span>
-      <h2>Télécharger Benchy</h2>
-      <p>Windows 10 / 11 · 64 bits</p>
-    </div>
-    <a class="final-download magnetic" data-download href="https://github.com/hawksbat/Benchy/releases">
-      <svg viewBox="0 0 24 24"><path d="M3 5.2 10.7 4v7.1H3V5.2Zm8.8-1.4L21 2.5v8.6h-9.2V3.8ZM3 12.3h7.7V19L3 17.8v-5.5Zm8.8 0H21v8.6l-9.2-1.3v-7.3Z"/></svg>
-      <span><strong>Télécharger</strong><small>v<span data-version>9.7.0</span></small></span>
-      
+<section class="final-cta">
+  <div class="shell final-inner reveal">
+    <div><h2>Benchy pour Windows.</h2><p>Installe, lance le benchmark, regarde les résultats.</p></div>
+    <a class="final-download" data-download href="https://github.com/hawksbat/Benchy/releases">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.2 10.7 4v7.1H3V5.2Zm8.8-1.4L21 2.5v8.6h-9.2V3.8ZM3 12.3h7.7V19L3 17.8v-5.5Zm8.8 0H21v8.6l-9.2-1.3v-7.3Z"/></svg>
+      Télécharger
     </a>
   </div>
 </section>
 </main>
 
-<dialog id="paypalDialog">
-  <button class="dialog-close" data-close-pay>×</button>
-  <span>BENCHY+</span>
-  <h3>Licence à vie</h3>
-  <p>19,99 € · paiement unique</p>
-  <div id="paypal-container-WYR5KHABYAUXQ"></div>
-</dialog>
-
-<footer>
-  <div class="shell footer-grid">
-    <a class="brand" href="#top"><img src="/assets/images/benchy-logo.png" alt=""><span>BENCHY<small>HAWKS INC.</small></span></a>
-    <span>© <span data-year></span> Hawks Inc</span>
-    <div><a href="/legal/">Mentions légales</a><a href="/download/">Téléchargement</a></div>
-  </div>
-</footer>
-
+<dialog id="paypalDialog"><button class="dialog-close" data-close-pay aria-label="Fermer">×</button><span>BENCHY+</span><h3>Licence à vie</h3><p>19,99 € · paiement unique</p><div id="paypal-container-WYR5KHABYAUXQ"></div></dialog>
+<footer><div class="shell footer-grid"><a class="brand" href="#top"><img src="/assets/images/benchy-logo.png" alt=""><span>BENCHY<small>HAWKS INC.</small></span></a><span>© <span data-year></span> Hawks Inc</span><div><a href="/legal/">Mentions légales</a><a href="/download/">Téléchargement</a></div></div></footer>
 <script>if(window.paypal&&paypal.HostedButtons)paypal.HostedButtons({hostedButtonId:"WYR5KHABYAUXQ"}).render("#paypal-container-WYR5KHABYAUXQ");</script>
-<script src="/assets/js/benchy-v970.js?v=9702"></script>
-</body>
-</html>
+<script src="/assets/js/benchy-v970.js?v=9705"></script>
+</body></html>
