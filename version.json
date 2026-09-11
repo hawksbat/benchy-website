@@ -1,6 +1,1 @@
-{
-  "version": "9.6.2",
-  "downloadUrl": "https://github.com/hawksbat/Benchy/releases",
-  "releaseNotes": "Fallback uniquement. Le site et Benchy utilisent désormais GitHub Releases/latest.",
-  "mandatory": false
-}
+{"version":"9.7.0","downloadUrl":"https://github.com/hawksbat/Benchy/releases","releaseNotes":"Fallback. Le site récupère automatiquement la dernière GitHub Release.","mandatory":false}

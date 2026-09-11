@@ -1,0 +1,11 @@
+const $=(q,r=document)=>r.querySelector(q),$$=(q,r=document)=>[...r.querySelectorAll(q)];
+$('[data-year]').textContent=new Date().getFullYear();
+const header=$('header');addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>20),{passive:true});
+const glow=$('[data-glow]');addEventListener('pointermove',e=>{if(glow){glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'}});
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('visible')),{threshold:.12});$$('.reveal').forEach(x=>io.observe(x));
+const core=$('[data-count]');let counted=false;new IntersectionObserver(es=>{if(es[0].isIntersecting&&!counted){counted=true;let st=performance.now(),to=+core.dataset.count;requestAnimationFrame(function f(t){let p=Math.min(1,(t-st)/1200);core.textContent=Math.round(to*(1-Math.pow(1-p,3))).toLocaleString('fr-FR');if(p<1)requestAnimationFrame(f)})}}).observe(core);
+const tilt=$('[data-tilt]');if(tilt)tilt.addEventListener('pointermove',e=>{const r=tilt.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;tilt.style.transform=`rotateX(${-y*3}deg) rotateY(${x*4}deg)`});tilt?.addEventListener('pointerleave',()=>tilt.style.transform='');
+const pics=['/assets/images/benchy-pc.png','/assets/images/benchy-games.png','/assets/images/benchy-compare.png'];$$('[data-peek]').forEach(b=>b.onclick=()=>{$$('[data-peek]').forEach(x=>x.classList.remove('active'));b.classList.add('active');$('[data-peek-img]').src=pics[+b.dataset.peek]});
+const dlg=$('#paypalDialog');$$('[data-buy]').forEach(b=>b.onclick=()=>dlg?.showModal());$('[data-close-pay]')?.addEventListener('click',()=>dlg.close());
+// GitHub latest release is the single source of truth: no site repush needed for each app release.
+fetch('https://api.github.com/repos/hawksbat/Benchy/releases/latest',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject()).then(rel=>{const v=(rel.tag_name||'').replace(/^v/i,'');const assets=rel.assets||[];const exe=assets.find(a=>new RegExp(`^Benchy[_-]?${v.replaceAll('.','\\.')}\\.exe$`,'i').test(a.name))||assets.find(a=>/^Benchy.*\.exe$/i.test(a.name));if(v)$$('[data-version]').forEach(e=>e.textContent=v);if(exe)$$('[data-download]').forEach(e=>e.href=exe.browser_download_url)}).catch(()=>{});
