@@ -3,8 +3,6 @@ $('[data-year]').textContent=new Date().getFullYear();
 const header=$('header');
 addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>18),{passive:true});
 
-const spot=$('[data-spotlight]');
-addEventListener('pointermove',e=>{if(spot){spot.style.left=e.clientX+'px';spot.style.top=e.clientY+'px'}},{passive:true});
 
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1});
 $$('.reveal').forEach(x=>io.observe(x));
@@ -19,10 +17,6 @@ if(par){
  par.addEventListener('pointerleave',()=>par.style.transform='');
 }
 
-$$('.magnetic').forEach(el=>{
- el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;el.style.transform=`translate(${x*.025}px,${y*.025}px)`});
- el.addEventListener('pointerleave',()=>el.style.transform='');
-});
 
 const pics=['/assets/images/benchy-pc.png','/assets/images/benchy-games.png','/assets/images/benchy-compare.png'];
 $$('[data-peek]').forEach(b=>b.onclick=()=>{
